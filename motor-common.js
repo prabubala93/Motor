@@ -337,7 +337,7 @@ function handleCalculate() {
 
   // ---------- THIRD-PARTY PART ----------
   const tpBase = rateRow.tp;
-  const tpTaxRate = VEHICLE_CONFIG.isGoods ? 0.12 : 0.18;
+  const tpTaxRate = VEHICLE_CONFIG.isGoods ? 0.05 : 0.18;
   const tpBaseTax = tpBase * tpTaxRate;
   const tpBaseWithTax = tpBase + tpBaseTax;
 
