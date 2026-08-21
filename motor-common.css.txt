@@ -1,0 +1,400 @@
+/* =========================================================
+   Motor Premium Calculator — Mobile-first stacked layout
+   ========================================================= */
+
+:root {
+  --ink-900: #16283F;
+  --ink-700: #2B3E58;
+  --ink-500: #5A6B84;
+  --ink-200: #D8DEE8;
+  --paper: #F7F6F2;
+  --paper-raised: #FFFFFF;
+  --brass: #B8863B;
+  --brass-dark: #8C6528;
+  --brass-tint: #F1E4CC;
+  --green: #2F6F4E;
+  --green-tint: #E3F0E9;
+  --red: #B54747;
+  --red-tint: #F6E7E7;
+  --radius: 4px;
+  --font-display: 'Source Serif 4', Georgia, serif;
+  --font-body: 'IBM Plex Sans', -apple-system, Segoe UI, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink-900);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.45;
+  padding-bottom: 48px;
+}
+
+.shell {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ---------- Header ---------- */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  background: var(--paper);
+  z-index: 10;
+  border-bottom: 2px solid var(--ink-900);
+  margin-bottom: 20px;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--paper-raised);
+  border: 1px solid var(--ink-200);
+  text-decoration: none;
+  color: var(--ink-900);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.topbar h1 {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.topbar .sub {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--brass-dark);
+  text-transform: uppercase;
+}
+
+/* ---------- Landing: vehicle type buttons ---------- */
+
+.hero {
+  text-align: center;
+  padding: 8px 0 24px;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: 26px;
+  margin: 0 0 6px;
+}
+
+.hero p {
+  color: var(--ink-500);
+  font-size: 13.5px;
+  margin: 0;
+}
+
+.type-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.type-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--paper-raised);
+  border: 1px solid var(--ink-200);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  text-decoration: none;
+  color: var(--ink-900);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 15px;
+  box-shadow: 0 1px 2px rgba(22,40,63,0.05);
+}
+
+.type-btn:active { background: var(--brass-tint); }
+
+.type-btn .arrow {
+  color: var(--brass-dark);
+  font-family: var(--font-mono);
+}
+
+.type-btn .cat-tag {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--ink-500);
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+/* ---------- Section cards (stacked, full width) ---------- */
+
+.section {
+  background: var(--paper-raised);
+  border: 1px solid var(--ink-200);
+  border-radius: var(--radius);
+  padding: 18px;
+  margin-bottom: 16px;
+}
+
+.section h2 {
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-500);
+  margin: 0 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--ink-200);
+}
+
+/* ---------- Form fields (single column, stacked) ---------- */
+
+.field {
+  margin-bottom: 14px;
+}
+
+.field:last-child { margin-bottom: 0; }
+
+.field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-700);
+  margin-bottom: 5px;
+}
+
+.field .hint {
+  font-size: 11.5px;
+  color: var(--ink-500);
+  margin-top: 4px;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  padding: 11px 12px;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  border: 1px solid var(--ink-200);
+  border-radius: var(--radius);
+  background: var(--paper);
+  color: var(--ink-900);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235A6B84' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  padding-right: 34px;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: none;
+  border-color: var(--brass);
+  box-shadow: 0 0 0 3px var(--brass-tint);
+}
+
+.field-inline-note {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--brass-dark);
+  margin-top: 4px;
+}
+
+/* ---------- Add-on toggle rows (stacked, tap-friendly) ---------- */
+
+.addon-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--ink-200);
+}
+
+.addon-row:last-child { border-bottom: none; }
+
+.addon-row .addon-label {
+  font-size: 13.5px;
+  color: var(--ink-900);
+  line-height: 1.35;
+  padding-top: 2px;
+}
+
+.addon-row .addon-note {
+  display: block;
+  font-size: 11px;
+  color: var(--ink-500);
+  margin-top: 2px;
+}
+
+/* iOS-style toggle switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.switch input { opacity: 0; width: 0; height: 0; }
+
+.switch .slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: var(--ink-200);
+  border-radius: 26px;
+  transition: 0.15s;
+}
+
+.switch .slider::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.15s;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.switch input:checked + .slider { background: var(--green); }
+.switch input:checked + .slider::before { transform: translateX(18px); }
+
+.addon-disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.addon-eligibility-note {
+  background: var(--brass-tint);
+  border: 1px solid var(--brass);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  font-size: 12px;
+  color: var(--brass-dark);
+  margin-bottom: 12px;
+}
+
+.sub-input {
+  margin-top: 8px;
+}
+
+/* ---------- Buttons ---------- */
+
+button, .btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 15px;
+  border: none;
+  border-radius: var(--radius);
+  padding: 15px 20px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-primary {
+  background: var(--ink-900);
+  color: var(--paper);
+  position: sticky;
+  bottom: 12px;
+  box-shadow: 0 4px 14px rgba(22,40,63,0.25);
+}
+
+.btn-primary:active { background: var(--ink-700); }
+
+/* ---------- Results ---------- */
+
+.result-total {
+  font-family: var(--font-mono);
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--ink-900);
+  margin: 4px 0 2px;
+}
+
+.result-total .currency {
+  font-size: 14px;
+  color: var(--ink-500);
+  margin-right: 6px;
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+
+.result-group-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--brass-dark);
+  margin: 16px 0 8px;
+}
+
+.result-group-title:first-child { margin-top: 0; }
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 13px;
+  padding: 6px 0;
+  color: var(--ink-700);
+  border-bottom: 1px dotted var(--ink-200);
+}
+
+.result-row.emphasis {
+  font-weight: 600;
+  color: var(--ink-900);
+  border-top: 1px solid var(--ink-900);
+  border-bottom: none;
+  margin-top: 6px;
+  padding-top: 10px;
+}
+
+.result-row .val { font-family: var(--font-mono); white-space: nowrap; }
+
+.empty-state {
+  color: var(--ink-500);
+  font-size: 13px;
+  text-align: center;
+  padding: 28px 12px;
+  border: 1px dashed var(--ink-200);
+  border-radius: var(--radius);
+}
+
+.error-text { color: var(--red); font-size: 12px; margin-top: 6px; }
+
+.footer-note {
+  margin-top: 24px;
+  color: var(--ink-500);
+  font-size: 11px;
+  text-align: center;
+}
