@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PCV 3 Wheeler Upto 6 PSGR — Motor Premium Calculator</title>
+<link rel="stylesheet" href="motor-common.css">
+</head>
+<body>
+<div class="shell">
+
+  <div class="topbar">
+    <a class="back-btn" href="motor-index.html">&#8249;</a>
+    <div>
+      <span class="sub">Motor / Own Damage &amp; TP</span>
+      <h1>PCV 3 Wheeler Upto 6 PSGR</h1>
+    </div>
+  </div>
+
+  <div id="app">
+    <div class="empty-state">Loading rate chart…</div>
+  </div>
+
+</div>
+
+<script>
+const VEHICLE_CONFIG = {
+  csvType: 'PCV 3 WHEELER UPTO 6 PSGR',
+  label: 'PCV 3 Wheeler Upto 6 PSGR',
+  isGoods: false,
+  hasSeats: true,
+  hasGVW: false,
+  ageBandType: '5-7',
+  addonAgeCutoff: 3,
+  pcvSurcharge: false,
+};
+</script>
+<script src="motor-common.js"></script>
+<script>initMotorCalculator();</script>
+</body>
+</html>
