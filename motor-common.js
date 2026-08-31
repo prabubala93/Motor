@@ -422,7 +422,6 @@ function renderResult(r) {
       <div class="quote-banner">
         <p class="quote-label">Premium Quote — ${today}</p>
         <p class="quote-vehicle">${m.vehicleLabel}</p>
-        <div class="result-total"><span class="currency">₹</span>${fmt(r.finalPremium)}</div>
         <p class="quote-total-label">Total Premium (incl. tax)</p>
       </div>
 
