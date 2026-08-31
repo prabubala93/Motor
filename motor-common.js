@@ -441,14 +441,6 @@ function renderResult(r) {
           <span class="meta-label">Vehicle Age</span>
           <span class="meta-value">${m.age.toFixed(1)} yrs</span>
         </div>
-        <div class="quote-meta-item">
-          <span class="meta-label">Previous NCB</span>
-          <span class="meta-value">${m.prevNcb === "NIL" ? "NIL" : m.prevNcb + "%"}</span>
-        </div>
-        <div class="quote-meta-item">
-          <span class="meta-label">Current NCB Applied</span>
-          <span class="meta-value">${m.ncbPct}%</span>
-        </div>
       </div>
 
       <div class="quote-body">
