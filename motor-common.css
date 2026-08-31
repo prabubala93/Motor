@@ -346,7 +346,7 @@ button, .btn {
 .quote-banner {
   background: var(--ink-900);
   color: var(--paper);
-  padding: 18px 18px 16px;
+  padding: 18px 18px 12px;
   text-align: center;
 }
 
