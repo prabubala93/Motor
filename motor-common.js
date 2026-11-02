@@ -45,7 +45,7 @@ const OD_ADDONS = [
 
 // TP-side flat-rate add-on covers
 const TP_FLAT_ADDONS = {
-  compulsoryPaOwner: 275,
+  compulsoryPaOwner: 325,
   paidDriver: 50,
   unnamedPassenger: 50, // per passenger
 };
